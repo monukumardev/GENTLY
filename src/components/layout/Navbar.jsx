@@ -1,0 +1,226 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom"; // ✅ IMPORTANT
+
+import {
+  Badge,
+  IconButton,
+  Button,
+  Tooltip,
+  Stack
+} from "@mui/material";
+
+import {
+  PersonOutline,
+  FavoriteBorder,
+  ShoppingBagOutlined,
+  CompareArrows,
+  Search as SearchIcon,
+  Menu as MenuIcon,
+  Close as CloseIcon
+} from "@mui/icons-material";
+
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const badgeStyle = {
+    "& .MuiBadge-badge": {
+      backgroundColor: "#ff5252",
+      color: "white",
+      fontSize: "10px",
+      height: "18px",
+      minWidth: "14px",
+      border: "2px solid white",
+    }
+  };
+
+  return (
+    <nav className="w-full bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+
+        {/* MOBILE MENU */}
+        <div className="lg:hidden">
+          <IconButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+          </IconButton>
+        </div>
+
+        {/* LOGO */}
+        <div>
+          <Link to="/" className="text-xl md:text-2xl text-red-500 font-black tracking-tight uppercase">
+            GENTLY
+          </Link>
+        </div>
+
+        {/* NAV LINKS */}
+        <ul className="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-wide text-gray-800">
+
+          <li className="py-5">
+            <Link to="/products/new" className="hover:text-red-500">
+              New Drops
+            </Link>
+          </li>
+
+          {/* STYLE (MEGA MENU) */}
+          <li className="group relative py-5">
+            <Link to="/products/style" className="hover:text-red-500">
+              Style
+            </Link>
+
+            <div className="absolute top-full left-[-120px] w-[650px] bg-white shadow-xl border p-8 grid grid-cols-3 gap-8 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
+
+              <div>
+                <h4 className="text-red-500 mb-3 text-xs uppercase">Essentials</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li><Link to="/products/style">T-Shirts</Link></li>
+                  <li><Link to="/products/style">Shirts</Link></li>
+                  <li><Link to="/products/style">Hoodies</Link></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-red-500 mb-3 text-xs uppercase">Streetwear</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li><Link to="/products/style">Oversized Tees</Link></li>
+                  <li><Link to="/products/style">Cargo Pants</Link></li>
+                  <li><Link to="/products/style">Joggers</Link></li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-xs text-gray-400 mb-1">Featured</p>
+                <h5 className="font-semibold">Summer Drop</h5>
+                <Link to="/products/new" className="text-xs underline">
+                  Explore
+                </Link>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <Link to="/products/footwear" className="hover:text-red-500">
+              Footwear
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/products/accessories" className="hover:text-red-500">
+              Accessories
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/products/grooming" className="hover:text-red-500">
+              Grooming
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/products/trending" className="hover:text-red-500">
+              🔥 Trending
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/products/sale" className="text-red-500 font-bold">
+              Sale
+            </Link>
+          </li>
+        </ul>
+
+        <div className="flex items-center gap-2">
+
+          <div className="hidden xl:flex items-center bg-gray-50 px-3 py-1.5 rounded-lg w-56 border focus-within:border-red-500">
+            <SearchIcon sx={{ fontSize: 18, color: "#9ca3af" }} />
+            <input
+              type="text"
+              placeholder="Search sneakers, hoodies..."
+              className="bg-transparent outline-none ml-2 text-sm w-full"
+            />
+          </div>
+
+          <Stack direction="row" spacing={0.5}>
+
+            <Button
+              startIcon={<PersonOutline />}
+              sx={{
+                display: { xs: "none", sm: "flex" },
+                fontSize: "12px",
+                fontWeight: 700,
+                color: "#374151",
+                "&:hover": { color: "#ff5252" }
+              }}
+            >
+              Login
+            </Button>
+
+            <Tooltip title="Compare">
+              <IconButton>
+                <Badge badgeContent={2} sx={badgeStyle}>
+                  <CompareArrows />
+                </Badge>
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Wishlist">
+              <IconButton>
+                <Badge badgeContent={0} showZero sx={badgeStyle}>
+                  <FavoriteBorder />
+                </Badge>
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Cart">
+              <IconButton>
+                <Badge badgeContent={3} sx={badgeStyle}>
+                  <ShoppingBagOutlined />
+                </Badge>
+              </IconButton>
+            </Tooltip>
+
+          </Stack>
+        </div>
+      </div>
+
+      {/* MOBILE MENU */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t shadow-md animate-slideDown">
+
+          <div className="p-5 space-y-3">
+
+            {[
+              { name: "New Drops", path: "/products/new" },
+              { name: "Style", path: "/products/style" },
+              { name: "Footwear", path: "/products/footwear" },
+              { name: "Accessories", path: "/products/accessories" },
+              { name: "Grooming", path: "/products/grooming" },
+              { name: "Trending", path: "/products/trending" },
+            ].map((item, index) => (
+              <Link
+                key={index}
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center justify-between px-4 py-3 rounded-lg text-gray-800 font-semibold bg-gray-50 hover:bg-red-50 hover:text-red-500 transition"
+              >
+                {item.name}
+                <span className="text-sm">→</span>
+              </Link>
+            ))}
+
+            {/* SALE SPECIAL CARD */}
+            <Link
+              to="/products/sale"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block mt-4 px-4 py-3 rounded-lg bg-red-500 text-white font-bold text-center shadow hover:bg-red-600 transition"
+            >
+              Sale
+            </Link>
+
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
