@@ -11,6 +11,7 @@ const products = [
   {
     id: 1,
     name: "Oversized T-Shirt",
+    type: "tshirt",
     price: 999,
     oldPrice: 1499,
     rating: 4.5,
@@ -23,6 +24,7 @@ const products = [
   {
     id: 2,
     name: "Street Hoodie",
+    type: "hoodie",
     price: 1999,
     oldPrice: 2499,
     rating: 4.8,
@@ -35,6 +37,7 @@ const products = [
   {
     id: 3,
     name: "Vintage Denim Jacket",
+    type: "jacket",
     price: 3499,
     oldPrice: 4999,
     rating: 4.4,
@@ -47,6 +50,7 @@ const products = [
   {
     id: 4,
     name: "Cargo Joggers",
+    type: "jeans",
     price: 1599,
     oldPrice: 2199,
     rating: 4.3,
@@ -59,6 +63,7 @@ const products = [
   {
     id: 5,
     name: "Graphic Sweatshirt",
+    type: "sweatshirt",
     price: 1299,
     oldPrice: 1799,
     rating: 4.6,
@@ -71,6 +76,7 @@ const products = [
   {
     id: 6,
     name: "Flannel Plaid Shirt",
+    type: "shirt",
     price: 1199,
     oldPrice: 1699,
     rating: 4.2,
@@ -83,6 +89,7 @@ const products = [
   {
     id: 7,
     name: "Leather Biker Jacket",
+    type: "jacket",
     price: 4999,
     oldPrice: 6999,
     rating: 4.9,
@@ -95,6 +102,7 @@ const products = [
   {
     id: 8,
     name: "Puffer Vest",
+    type: "jacket",
     price: 2199,
     oldPrice: 2999,
     rating: 4.4,
