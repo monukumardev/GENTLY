@@ -8,7 +8,7 @@ import denimJacket from "../assets/DenimJacket.webp";
 import cargo from "../assets/Cargo.webp";
 import sweatshirt from "../assets/sweatshirt.webp";
 import FlaidShirt from "../assets/Flannel-Plaid-Shirt.webp";
-import BikerJacket from "../assets/Leather-Biker-jacket.webp";
+import BikerJacket from "../assets/BIKERJACKET.webp";
 import PufferVest from "../assets/Puffer-Vest.webp";
 
 const products = [
