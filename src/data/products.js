@@ -1,3 +1,7 @@
+// ===============================================
+// FILE: src/data/products.js
+// ===============================================
+
 import OversizedTShirt from "../assets/Oversized-T-Shirt.webp";
 import StreetHoddie from "../assets/StreetHoddie.webp";
 import denimJacket from "../assets/DenimJacket.webp";
@@ -8,109 +12,475 @@ import BikerJacket from "../assets/Leather-Biker-jacket.webp";
 import PufferVest from "../assets/Puffer-Vest.webp";
 
 const products = [
+
+  // =========================================
+  // NEW DROPS
+  // =========================================
+
   {
     id: 1,
+
     name: "Oversized T-Shirt",
-    type: "tshirt",
-    price: 999,
-    oldPrice: 1499,
-    rating: 4.5,
-    reviews: 128,
-    badge: "Best Seller",
+
+    slug: "oversized-tshirt-black",
+
     category: "new",
+
+    subCategory: "tshirt",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 999,
+
+    oldPrice: 1499,
+
+    discount: 33,
+
+    rating: 4.5,
+
+    reviews: 128,
+
+    stock: 20,
+
+    badge: "Best Seller",
+
+    sizes: ["S", "M", "L", "XL"],
+
+    colors: ["Black", "White"],
+
+    material: "Cotton",
+
+    featured: true,
+
+    trending: true,
+
     image: OversizedTShirt,
+
+    images: [
+      OversizedTShirt,
+    ],
   },
 
   {
     id: 2,
+
     name: "Street Hoodie",
-    type: "hoodie",
-    price: 1999,
-    oldPrice: 2499,
-    rating: 4.8,
-    reviews: 87,
-    badge: "New",
+
+    slug: "street-hoodie-beige",
+
     category: "new",
+
+    subCategory: "hoodie",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 1999,
+
+    oldPrice: 2499,
+
+    discount: 20,
+
+    rating: 4.8,
+
+    reviews: 87,
+
+    stock: 15,
+
+    badge: "New",
+
+    sizes: ["M", "L", "XL"],
+
+    colors: ["Beige", "Black"],
+
+    material: "Fleece",
+
+    featured: true,
+
+    trending: true,
+
     image: StreetHoddie,
+
+    images: [
+      StreetHoddie,
+    ],
   },
 
   {
     id: 3,
+
     name: "Vintage Denim Jacket",
-    type: "jacket",
-    price: 3499,
-    oldPrice: 4999,
-    rating: 4.4,
-    reviews: 52,
-    badge: "Trending",
+
+    slug: "vintage-denim-jacket-blue",
+
     category: "new",
+
+    subCategory: "jacket",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 3499,
+
+    oldPrice: 4999,
+
+    discount: 30,
+
+    rating: 4.4,
+
+    reviews: 52,
+
+    stock: 10,
+
+    badge: "Trending",
+
+    sizes: ["M", "L", "XL"],
+
+    colors: ["Blue"],
+
+    material: "Denim",
+
+    featured: false,
+
+    trending: true,
+
     image: denimJacket,
+
+    images: [
+      denimJacket,
+    ],
   },
 
   {
     id: 4,
+
     name: "Cargo Joggers",
-    type: "jeans",
-    price: 1599,
-    oldPrice: 2199,
-    rating: 4.3,
-    reviews: 76,
-    badge: "Hot",
+
+    slug: "cargo-joggers-green",
+
     category: "new",
+
+    subCategory: "joggers",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 1599,
+
+    oldPrice: 2199,
+
+    discount: 27,
+
+    rating: 4.3,
+
+    reviews: 76,
+
+    stock: 18,
+
+    badge: "Hot",
+
+    sizes: ["S", "M", "L"],
+
+    colors: ["Olive Green"],
+
+    material: "Cotton Blend",
+
+    featured: false,
+
+    trending: true,
+
     image: cargo,
+
+    images: [
+      cargo,
+    ],
   },
 
   {
     id: 5,
+
     name: "Graphic Sweatshirt",
-    type: "sweatshirt",
-    price: 1299,
-    oldPrice: 1799,
-    rating: 4.6,
-    reviews: 41,
-    badge: "Popular",
+
+    slug: "graphic-sweatshirt-grey",
+
     category: "new",
+
+    subCategory: "sweatshirt",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 1299,
+
+    oldPrice: 1799,
+
+    discount: 28,
+
+    rating: 4.6,
+
+    reviews: 41,
+
+    stock: 12,
+
+    badge: "Popular",
+
+    sizes: ["M", "L", "XL"],
+
+    colors: ["Grey"],
+
+    material: "Cotton",
+
+    featured: true,
+
+    trending: false,
+
     image: sweatshirt,
+
+    images: [
+      sweatshirt,
+    ],
   },
 
   {
     id: 6,
+
     name: "Flannel Plaid Shirt",
-    type: "shirt",
-    price: 1199,
-    oldPrice: 1699,
-    rating: 4.2,
-    reviews: 33,
-    badge: "Limited",
+
+    slug: "flannel-plaid-shirt-red",
+
     category: "new",
+
+    subCategory: "shirt",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 1199,
+
+    oldPrice: 1699,
+
+    discount: 29,
+
+    rating: 4.2,
+
+    reviews: 33,
+
+    stock: 25,
+
+    badge: "Limited",
+
+    sizes: ["S", "M", "L", "XL"],
+
+    colors: ["Red", "Black"],
+
+    material: "Flannel",
+
+    featured: false,
+
+    trending: false,
+
     image: FlaidShirt,
+
+    images: [
+      FlaidShirt,
+    ],
   },
 
   {
     id: 7,
+
     name: "Leather Biker Jacket",
-    type: "jacket",
-    price: 4999,
-    oldPrice: 6999,
-    rating: 4.9,
-    reviews: 96,
-    badge: "Premium",
+
+    slug: "leather-biker-jacket-black",
+
     category: "new",
+
+    subCategory: "jacket",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 4999,
+
+    oldPrice: 6999,
+
+    discount: 29,
+
+    rating: 4.9,
+
+    reviews: 96,
+
+    stock: 8,
+
+    badge: "Premium",
+
+    sizes: ["M", "L", "XL"],
+
+    colors: ["Black"],
+
+    material: "Leather",
+
+    featured: true,
+
+    trending: true,
+
     image: BikerJacket,
+
+    images: [
+      BikerJacket,
+    ],
   },
 
   {
     id: 8,
+
     name: "Puffer Vest",
-    type: "jacket",
-    price: 2199,
-    oldPrice: 2999,
-    rating: 4.4,
-    reviews: 59,
-    badge: "Sale",
+
+    slug: "puffer-vest-brown",
+
     category: "new",
+
+    subCategory: "jacket",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 2199,
+
+    oldPrice: 2999,
+
+    discount: 27,
+
+    rating: 4.4,
+
+    reviews: 59,
+
+    stock: 14,
+
+    badge: "Sale",
+
+    sizes: ["M", "L"],
+
+    colors: ["Brown"],
+
+    material: "Polyester",
+
+    featured: false,
+
+    trending: true,
+
     image: PufferVest,
+
+    images: [
+      PufferVest,
+    ],
   },
+
+  // =========================================
+  // FOOTWEAR
+  // =========================================
+
+  {
+    id: 9,
+
+    name: "Urban Sneakers",
+
+    slug: "urban-sneakers-white",
+
+    category: "footwear",
+
+    subCategory: "sneakers",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 2999,
+
+    oldPrice: 3999,
+
+    discount: 25,
+
+    rating: 4.7,
+
+    reviews: 110,
+
+    stock: 30,
+
+    badge: "Trending",
+
+    sizes: ["7", "8", "9", "10"],
+
+    colors: ["White"],
+
+    material: "Synthetic",
+
+    featured: true,
+
+    trending: true,
+
+    image: PufferVest,
+
+    images: [
+      PufferVest,
+    ],
+  },
+
+  {
+    id: 10,
+
+    name: "Running Sports Shoes",
+
+    slug: "running-sports-shoes-black",
+
+    category: "footwear",
+
+    subCategory: "sports-shoes",
+
+    brand: "Vantix",
+
+    gender: "men",
+
+    price: 3599,
+
+    oldPrice: 4599,
+
+    discount: 22,
+
+    rating: 4.6,
+
+    reviews: 74,
+
+    stock: 18,
+
+    badge: "Hot",
+
+    sizes: ["7", "8", "9"],
+
+    colors: ["Black"],
+
+    material: "Mesh",
+
+    featured: false,
+
+    trending: true,
+
+    image: StreetHoddie,
+
+    images: [
+      StreetHoddie,
+    ],
+  },
+
 ];
 
-export default products;
+export default products;  
