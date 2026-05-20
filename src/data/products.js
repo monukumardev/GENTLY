@@ -19,45 +19,26 @@ const products = [
 
   {
     id: 1,
-
     name: "Oversized T-Shirt",
-
     slug: "oversized-tshirt-black",
-
     category: "new",
-
     subCategory: "tshirt",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 999,
-
     oldPrice: 1499,
-
     discount: 33,
-
     rating: 4.5,
-
     reviews: 128,
-
     stock: 20,
-
     badge: "Best Seller",
-
     sizes: ["S", "M", "L", "XL"],
-
     colors: ["Black", "White"],
-
     material: "Cotton",
-
     featured: true,
-
     trending: true,
-
+    description: "Premium oversized cotton t-shirt made for modern streetwear fashion.",
     image: OversizedTShirt,
-
     images: [
       OversizedTShirt,
     ],
@@ -65,45 +46,26 @@ const products = [
 
   {
     id: 2,
-
     name: "Street Hoodie",
-
     slug: "street-hoodie-beige",
-
     category: "new",
-
     subCategory: "hoodie",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 1999,
-
     oldPrice: 2499,
-
     discount: 20,
-
     rating: 4.8,
-
     reviews: 87,
-
     stock: 15,
-
     badge: "New",
-
     sizes: ["M", "L", "XL"],
-
     colors: ["Beige", "Black"],
-
     material: "Fleece",
-
     featured: true,
-
     trending: true,
-
+    description: "Heavyweight drop-shoulder fleece hoodie crafted for ultimate street comfort.",
     image: StreetHoddie,
-
     images: [
       StreetHoddie,
     ],
@@ -111,45 +73,26 @@ const products = [
 
   {
     id: 3,
-
     name: "Vintage Denim Jacket",
-
     slug: "vintage-denim-jacket-blue",
-
     category: "new",
-
     subCategory: "jacket",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 3499,
-
     oldPrice: 4999,
-
     discount: 30,
-
     rating: 4.4,
-
     reviews: 52,
-
     stock: 10,
-
     badge: "Trending",
-
     sizes: ["M", "L", "XL"],
-
     colors: ["Blue"],
-
     material: "Denim",
-
     featured: false,
-
     trending: true,
-
+    description: "Classic relaxed fit washed denim jacket with premium custom hardware detailing.",
     image: denimJacket,
-
     images: [
       denimJacket,
     ],
@@ -157,45 +100,26 @@ const products = [
 
   {
     id: 4,
-
     name: "Cargo Joggers",
-
     slug: "cargo-joggers-green",
-
     category: "new",
-
     subCategory: "joggers",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 1599,
-
     oldPrice: 2199,
-
     discount: 27,
-
     rating: 4.3,
-
     reviews: 76,
-
     stock: 18,
-
     badge: "Hot",
-
     sizes: ["S", "M", "L"],
-
     colors: ["Olive Green"],
-
     material: "Cotton Blend",
-
     featured: false,
-
     trending: true,
-
+    description: "Multi-pocket tactical cargo joggers combining utility style with functional streetwear aesthetics.",
     image: cargo,
-
     images: [
       cargo,
     ],
@@ -203,45 +127,26 @@ const products = [
 
   {
     id: 5,
-
     name: "Graphic Sweatshirt",
-
     slug: "graphic-sweatshirt-grey",
-
     category: "new",
-
     subCategory: "sweatshirt",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 1299,
-
     oldPrice: 1799,
-
     discount: 28,
-
     rating: 4.6,
-
     reviews: 41,
-
     stock: 12,
-
     badge: "Popular",
-
     sizes: ["M", "L", "XL"],
-
     colors: ["Grey"],
-
     material: "Cotton",
-
     featured: true,
-
     trending: false,
-
+    description: "Premium cotton blend pullover sweatshirt featuring high-density vintage screen-printed graphics.",
     image: sweatshirt,
-
     images: [
       sweatshirt,
     ],
@@ -249,45 +154,26 @@ const products = [
 
   {
     id: 6,
-
     name: "Flannel Plaid Shirt",
-
     slug: "flannel-plaid-shirt-red",
-
     category: "new",
-
     subCategory: "shirt",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 1199,
-
     oldPrice: 1699,
-
     discount: 29,
-
     rating: 4.2,
-
     reviews: 33,
-
     stock: 25,
-
     badge: "Limited",
-
     sizes: ["S", "M", "L", "XL"],
-
     colors: ["Red", "Black"],
-
     material: "Flannel",
-
     featured: false,
-
     trending: false,
-
+    description: "Soft brushed plaid flannel shirt engineered for clean layering over your favorite tees.",
     image: FlaidShirt,
-
     images: [
       FlaidShirt,
     ],
@@ -295,45 +181,26 @@ const products = [
 
   {
     id: 7,
-
     name: "Leather Biker Jacket",
-
     slug: "leather-biker-jacket-black",
-
     category: "new",
-
     subCategory: "jacket",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 4999,
-
     oldPrice: 6999,
-
     discount: 29,
-
     rating: 4.9,
-
     reviews: 96,
-
     stock: 8,
-
     badge: "Premium",
-
     sizes: ["M", "L", "XL"],
-
     colors: ["Black"],
-
     material: "Leather",
-
     featured: true,
-
     trending: true,
-
+    description: "Premium heavy-duty faux leather biker jacket tailored for a rugged, upscale urban edge.",
     image: BikerJacket,
-
     images: [
       BikerJacket,
     ],
@@ -341,45 +208,26 @@ const products = [
 
   {
     id: 8,
-
     name: "Puffer Vest",
-
     slug: "puffer-vest-brown",
-
     category: "new",
-
     subCategory: "jacket",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 2199,
-
     oldPrice: 2999,
-
     discount: 27,
-
     rating: 4.4,
-
     reviews: 59,
-
     stock: 14,
-
     badge: "Sale",
-
     sizes: ["M", "L"],
-
     colors: ["Brown"],
-
     material: "Polyester",
-
     featured: false,
-
     trending: true,
-
+    description: "Insulated water-resistant winter puffer vest featuring a minimal clean profile and micro-fleece lining.",
     image: PufferVest,
-
     images: [
       PufferVest,
     ],
@@ -391,45 +239,26 @@ const products = [
 
   {
     id: 9,
-
     name: "Urban Sneakers",
-
     slug: "urban-sneakers-white",
-
     category: "footwear",
-
     subCategory: "sneakers",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 2999,
-
     oldPrice: 3999,
-
     discount: 25,
-
     rating: 4.7,
-
     reviews: 110,
-
     stock: 30,
-
     badge: "Trending",
-
     sizes: ["7", "8", "9", "10"],
-
     colors: ["White"],
-
     material: "Synthetic",
-
     featured: true,
-
     trending: true,
-
-    image: PufferVest,
-
+    description: "Clean minimalist low-top lifestyle sneakers equipped with extra-comfortable cushioned insoles.",
+    image: PufferVest, 
     images: [
       PufferVest,
     ],
@@ -437,45 +266,26 @@ const products = [
 
   {
     id: 10,
-
     name: "Running Sports Shoes",
-
     slug: "running-sports-shoes-black",
-
     category: "footwear",
-
     subCategory: "sports-shoes",
-
-    brand: "Vantix",
-
+    brand: "Gently",
     gender: "men",
-
     price: 3599,
-
     oldPrice: 4599,
-
     discount: 22,
-
     rating: 4.6,
-
     reviews: 74,
-
     stock: 18,
-
     badge: "Hot",
-
     sizes: ["7", "8", "9"],
-
     colors: ["Black"],
-
     material: "Mesh",
-
     featured: false,
-
     trending: true,
-
-    image: StreetHoddie,
-
+    description: "Breathable engineered mesh running athletic shoes built for high performance and lightweight mobility.",
+    image: StreetHoddie, 
     images: [
       StreetHoddie,
     ],
@@ -483,4 +293,4 @@ const products = [
 
 ];
 
-export default products;  
+export default products;

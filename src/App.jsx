@@ -3,7 +3,8 @@ import TopBar from "./components/layout/TopBar";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
-import Products from "./pages/Products"; // ✅ import this
+import Products from "./pages/Products"; 
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
 
         {/* Dynamic category route */}
         <Route path="/products/:category" element={<Products />} />
+        <Route path="/product/:slug" element={<ProductDetails />} />
       </Routes>
       {/* 🔥 ROUTING END */}
 

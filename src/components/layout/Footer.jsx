@@ -121,10 +121,10 @@ const Footer = () => {
         {/* --- SECTION 3: SEO CONTENT --- */}
         <div className="py-20 border-b border-gray-800">
           <div className="max-w-[1000px] mb-16">
-            <h3 className="text-white font-black text-xl md:text-2xl mb-6 tracking-tighter uppercase italic">
+            <h3 className="text-white font-black text-[13px] md:text-s mb-6 tracking-tighter uppercase italic">
               GENTLY: India's Premium Streetwear Destination
             </h3>
-            <p className="text-gray-500 text-[15px] leading-8">
+            <p className="text-gray-500 text-[12px] leading-8">
               We bring you the latest global trends, from oversized silhouettes to minimalist essentials. 
               Discover trending collections designed for modern style, premium comfort, and individual expression.
             </p>

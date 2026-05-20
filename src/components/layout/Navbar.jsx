@@ -67,26 +67,31 @@ const Navbar = () => {
             <MegaMenu data={menuData.style} />
           </li>
 
-          {/* Gootwear */}
-          <li>
+          
+
+          {/* Footwear */}
+          <li className="group relative py-5">
             <Link to="/products/footwear" className="hover:text-red-500">
               Footwear
             </Link>
+            <MegaMenu data={menuData.footwear} />
           </li>
 
 
           {/* Accessories */}
-          <li>
+          <li className="group relative py-5">
             <Link to="/products/accessories" className="hover:text-red-500">
               Accessories
             </Link>
+            <MegaMenu data={menuData.accessories} />
           </li>
 
           {/* Grooming */}
-          <li>
+          <li className="group relative py-5">
             <Link to="/products/grooming" className="hover:text-red-500">
               Grooming
             </Link>
+            <MegaMenu data={menuData.grooming} />
           </li>
 
           {/* Trending */}
