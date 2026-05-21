@@ -7,11 +7,13 @@ const MegaMenu = ({ data }) => {
       className="
         absolute
         top-full
-        /* FIX: Align to the left edge of the parent container instead of centering */
         left-0
         mt-2
-        /* FIX: standardizes width to match common container break points safely */
-        w-[850px]
+        w-[min(90vw,850px)]
+        max-w-[850px]
+        min-w-[320px]
+        max-h-[80vh]
+        overflow-y-auto
         bg-white/95
         backdrop-blur-md
         rounded-[2rem]
@@ -19,8 +21,6 @@ const MegaMenu = ({ data }) => {
         border-gray-100/80
         shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)]
         p-9
-        
-        /* HOVER EFFECTS */
         opacity-0
         invisible
         translate-y-2
