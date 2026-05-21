@@ -50,67 +50,64 @@ const Navbar = () => {
         </div>
 
         {/* NAV LINKS */}
-        <ul className="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-wide text-gray-800">
-          {/* New Drop */}
-          <li className="py-5">
-            <Link to="/products/new" className="hover:text-red-500">
-              New Drops
-            </Link>
-          </li>
+        {/* 1. Add 'relative' here so the mega menus align to the entire bar */}
+<ul className="relative hidden lg:flex items-center gap-6 text-[12px] font-semibold uppercase tracking-wide text-gray-800">
+  {/* New Drop */}
+  <li className="py-5">
+    <Link to="/products/new" className="hover:text-red-500">
+      New Drops
+    </Link>
+  </li>
 
-          {/* STYLE (MEGA MENU) */}
-          <li className="group relative py-5">
-            <Link to="/products/new" className="hover:text-red-500 transition">
-              Style
-            </Link>
+  {/* STYLE - Notice 'relative' is REMOVED from <li>, but 'group' stays */}
+  <li className="group py-5">
+    <Link to="/products/new" className="hover:text-red-500 transition">
+      Style
+    </Link>
+    <MegaMenu data={menuData.style} />
+  </li>
 
-            <MegaMenu data={menuData.style} />
-          </li>
+  {/* Footwear - 'relative' removed */}
+  <li className="group py-5">
+    <Link to="/products/footwear" className="hover:text-red-500">
+      Footwear
+    </Link>
+    <MegaMenu data={menuData.footwear} />
+  </li>
 
-          
+  {/* Accessories - 'relative' removed */}
+  <li className="group py-5">
+    <Link to="/products/accessories" className="hover:text-red-500">
+      Accessories
+    </Link>
+    <MegaMenu data={menuData.accessories} />
+  </li>
 
-          {/* Footwear */}
-          <li className="group relative py-5">
-            <Link to="/products/footwear" className="hover:text-red-500">
-              Footwear
-            </Link>
-            <MegaMenu data={menuData.footwear} />
-          </li>
+  {/* Grooming - 'relative' removed */}
+  <li className="group py-5">
+    <Link to="/products/grooming" className="hover:text-red-500">
+      Grooming
+    </Link>
+    <MegaMenu data={menuData.grooming} />
+  </li>
 
+  {/* Trending */}
+  <li>
+    <Link to="/products/trending" className="hover:text-red-500">
+      🔥 Trending
+    </Link>
+  </li>
 
-          {/* Accessories */}
-          <li className="group relative py-5">
-            <Link to="/products/accessories" className="hover:text-red-500">
-              Accessories
-            </Link>
-            <MegaMenu data={menuData.accessories} />
-          </li>
-
-          {/* Grooming */}
-          <li className="group relative py-5">
-            <Link to="/products/grooming" className="hover:text-red-500">
-              Grooming
-            </Link>
-            <MegaMenu data={menuData.grooming} />
-          </li>
-
-          {/* Trending */}
-          <li>
-            <Link to="/products/trending" className="hover:text-red-500">
-              🔥 Trending
-            </Link>
-          </li>
-
-          {/* Sale */}
-          <li>
-            <Link to="/products/sale" className="text-red-500 font-bold">
-              Sale
-            </Link>
-          </li>
-        </ul>
+  {/* Sale */}
+  <li>
+    <Link to="/products/sale" className="text-red-500 font-bold">
+      Sale
+    </Link>
+  </li>
+</ul>
 
         <div className="flex items-center gap-2">
-          <div className="hidden xl:flex items-center bg-gray-50 px-3 py-1.5 rounded-lg w-56 border focus-within:border-red-500">
+          <div className="hidden xl:flex items-center bg-gray-50 px-3 py-1.5 rounded-lg w-80 border focus-within:border-red-500">
             <SearchIcon sx={{ fontSize: 18, color: "#9ca3af" }} />
             <input
               type="text"

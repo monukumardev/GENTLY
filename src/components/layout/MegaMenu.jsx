@@ -2,62 +2,64 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MegaMenu = ({ data }) => {
+  // Guard clause in case data isn't loaded or structured correctly
+  if (!data || !Array.isArray(data)) return null;
+
   return (
     <div
       className="
         absolute
         top-full
         left-0
-        mt-2
-        w-[min(90vw,850px)]
-        max-w-[850px]
-        min-w-[320px]
-        max-h-[80vh]
-        overflow-y-auto
-        bg-white/95
-        backdrop-blur-md
-        rounded-[2rem]
-        border
-        border-gray-100/80
-        shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)]
-        p-9
+        right-0
+        mx-auto
+        w-full
+        max-w-[950px]
+        bg-white
+        border-t border-b border-gray-100
+        shadow-[0_20px_40px_rgba(0,0,0,0.08)]
         opacity-0
         invisible
-        translate-y-2
+        translate-y-1
         group-hover:opacity-100
         group-hover:visible
         group-hover:translate-y-0
         transition-all
-        duration-300
+        duration-200
         ease-out
         z-50
       "
     >
-      {/* Grid Layout */}
-      <div className="grid grid-cols-4 gap-8">
+      <div className="p-7 flex flex-col gap-8">
         
-        {/* LEFT 3 COLUMNS */}
-        <div className="col-span-3 grid grid-cols-3 gap-8">
+        {/* TOP SECTION: Myntra-Style Columns Layout */}
+        <div className="grid grid-cols-3 gap-6">
           {data.map((section, index) => (
-            <div key={index} className="flex flex-col">
-              <h3 className="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-5">
+            <div 
+              key={index} 
+              className={`flex flex-col ${
+                index !== data.length - 1 ? "border-r border-gray-50 pr-4" : ""
+              }`}
+            >
+              {/* Category Header */}
+              <h3 className="text-[13px] font-bold tracking-wide text-red-500 mb-3.5">
                 {section.title}
               </h3>
 
-              <ul className="space-y-3">
+              {/* Sub-links */}
+              <ul className="space-y-2">
                 {section.links.map((link, idx) => (
                   <li key={idx}>
                     <Link
-                      to="/products/new"
+                      to={`/products/${link.toLowerCase().replace(/\s+/g, "-")}`}
                       className="
-                        inline-block
-                        text-[14px]
-                        font-medium
+                        block
+                        text-[13px]
                         text-gray-600
-                        hover:text-red-500
-                        hover:translate-x-1
-                        transition-all
-                        duration-200
+                        hover:text-gray-900
+                        hover:font-semibold
+                        transition-colors
+                        duration-150
                       "
                     >
                       {link}
@@ -69,64 +71,68 @@ const MegaMenu = ({ data }) => {
           ))}
         </div>
 
-        {/* RIGHT COLUMN: Marketing Card */}
-        <div
-          className="
-            relative
-            overflow-hidden
-            bg-gradient-to-br
-            from-gray-950
-            via-gray-900
-            to-black
-            rounded-2xl
-            p-6
-            text-white
-            flex
-            flex-col
-            justify-between
-            min-h-[280px]
-            shadow-xl
-          "
-        >
-          <div className="absolute -right-10 -top-10 w-32 h-32 bg-red-500/10 rounded-full blur-2xl pointer-events-none" />
-
-          <div className="relative z-10">
-            <span className="inline-block bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest text-red-400">
-              New Arrival
-            </span>
-
-            <h2 className="text-xl font-black mt-4 leading-tight tracking-tight">
-              Summer Streetwear 2026
-            </h2>
-
-            <p className="text-xs text-gray-400 mt-2.5 leading-relaxed font-light">
-              Discover oversized fits, premium essentials, and modern fashion updates.
-            </p>
-          </div>
-
-          <button
+        {/* BOTTOM SECTION: Full-Width Marketing Banner */}
+        <div className="border-t border-gray-100 pt-5">
+          <div
             className="
               relative
-              z-10
-              mt-6
               w-full
-              bg-red-500
-              hover:bg-red-600
-              active:scale-[0.98]
-              py-3
+              h-[100px]
               rounded-xl
-              text-xs
-              font-bold
-              uppercase
-              tracking-wider
-              transition-all
-              duration-200
-              shadow-lg
-              shadow-red-500/20
+              overflow-hidden
+              bg-gradient-to-r
+              from-gray-950
+              via-gray-900
+              to-red-950
+              px-8
+              flex
+              items-center
+              justify-between
+              shadow-inner
             "
           >
-            Explore Collection
-          </button>
+            {/* Background design accents */}
+            <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-red-500/10 to-transparent blur-xl pointer-events-none" />
+            
+            {/* Left text area */}
+            <div className="relative z-10 flex items-center gap-6">
+              <span className="bg-red-500 text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm shadow-red-500/30">
+                Trending Offer
+              </span>
+              <div>
+                <h2 className="text-base font-black text-white tracking-tight leading-tight">
+                  Summer Streetwear 2026
+                </h2>
+                <p className="text-xs text-gray-400 mt-0.5 font-light">
+                  Discover oversized fits, premium essentials, and modern fashion upgrades.
+                </p>
+              </div>
+            </div>
+
+            {/* Right button area */}
+            <button
+              className="
+                relative
+                z-10
+                bg-white
+                text-gray-900
+                hover:bg-gray-100
+                active:scale-[0.98]
+                px-6
+                py-2.5
+                rounded-lg
+                text-xs
+                font-bold
+                uppercase
+                tracking-wider
+                transition-all
+                duration-200
+                shadow-md
+              "
+            >
+              Explore Collection
+            </button>
+          </div>
         </div>
 
       </div>
