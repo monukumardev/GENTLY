@@ -16,7 +16,7 @@ const ProductGrid = ({ products }) => {
 
             <ProductCard
               key={item.id}
-              item={item}
+              product={item}
             />
 
           ))}
@@ -36,6 +36,7 @@ const ProductGrid = ({ products }) => {
       )}
 
     </div>
+
   );
 };
 

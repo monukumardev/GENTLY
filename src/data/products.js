@@ -40,7 +40,7 @@ const products = [
     description: "Premium oversized cotton t-shirt made for modern streetwear fashion.",
     image: OversizedTShirt,
     images: [
-      OversizedTShirt,
+      OversizedTShirt, StreetHoddie, denimJacket,
     ],
   },
 
