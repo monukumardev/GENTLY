@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import MegaMenu from "./MegaMenu";
 import menuData from "../../data/menuData";
 
@@ -16,6 +17,8 @@ import {
 } from "@mui/icons-material";
 
 const Navbar = () => {
+  const { cartItems } = useSelector((state) => state.cart);
+  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const badgeStyle = {
@@ -51,60 +54,60 @@ const Navbar = () => {
 
         {/* NAV LINKS */}
         {/* 1. Add 'relative' here so the mega menus align to the entire bar */}
-<ul className="relative hidden lg:flex items-center gap-6 text-[12px] font-semibold uppercase tracking-wide text-gray-800">
-  {/* New Drop */}
-  <li className="py-5">
-    <Link to="/products/new" className="hover:text-red-500">
-      New Drops
-    </Link>
-  </li>
+        <ul className="relative hidden lg:flex items-center gap-6 text-[12px] font-semibold uppercase tracking-wide text-gray-800">
+          {/* New Drop */}
+          <li className="py-5">
+            <Link to="/products/new" className="hover:text-red-500">
+              New Drops
+            </Link>
+          </li>
 
-  {/* STYLE - Notice 'relative' is REMOVED from <li>, but 'group' stays */}
-  <li className="group py-5">
-    <Link to="/products/new" className="hover:text-red-500 transition">
-      Style
-    </Link>
-    <MegaMenu data={menuData.style} />
-  </li>
+          {/* STYLE - Notice 'relative' is REMOVED from <li>, but 'group' stays */}
+          <li className="group py-5">
+            <Link to="/products/new" className="hover:text-red-500 transition">
+              Style
+            </Link>
+            <MegaMenu data={menuData.style} />
+          </li>
 
-  {/* Footwear - 'relative' removed */}
-  <li className="group py-5">
-    <Link to="/products/footwear" className="hover:text-red-500">
-      Footwear
-    </Link>
-    <MegaMenu data={menuData.footwear} />
-  </li>
+          {/* Footwear - 'relative' removed */}
+          <li className="group py-5">
+            <Link to="/products/footwear" className="hover:text-red-500">
+              Footwear
+            </Link>
+            <MegaMenu data={menuData.footwear} />
+          </li>
 
-  {/* Accessories - 'relative' removed */}
-  <li className="group py-5">
-    <Link to="/products/accessories" className="hover:text-red-500">
-      Accessories
-    </Link>
-    <MegaMenu data={menuData.accessories} />
-  </li>
+          {/* Accessories - 'relative' removed */}
+          <li className="group py-5">
+            <Link to="/products/accessories" className="hover:text-red-500">
+              Accessories
+            </Link>
+            <MegaMenu data={menuData.accessories} />
+          </li>
 
-  {/* Grooming - 'relative' removed */}
-  <li className="group py-5">
-    <Link to="/products/grooming" className="hover:text-red-500">
-      Grooming
-    </Link>
-    <MegaMenu data={menuData.grooming} />
-  </li>
+          {/* Grooming - 'relative' removed */}
+          <li className="group py-5">
+            <Link to="/products/grooming" className="hover:text-red-500">
+              Grooming
+            </Link>
+            <MegaMenu data={menuData.grooming} />
+          </li>
 
-  {/* Trending */}
-  <li>
-    <Link to="/products/trending" className="hover:text-red-500">
-      🔥 Trending
-    </Link>
-  </li>
+          {/* Trending */}
+          <li>
+            <Link to="/products/trending" className="hover:text-red-500">
+              🔥 Trending
+            </Link>
+          </li>
 
-  {/* Sale */}
-  <li>
-    <Link to="/products/sale" className="text-red-500 font-bold">
-      Sale
-    </Link>
-  </li>
-</ul>
+          {/* Sale */}
+          <li>
+            <Link to="/products/sale" className="text-red-500 font-bold">
+              Sale
+            </Link>
+          </li>
+        </ul>
 
         <div className="flex items-center gap-2">
           <div className="hidden xl:flex items-center bg-gray-50 px-3 py-1.5 rounded-lg w-80 border focus-within:border-red-500">
@@ -147,11 +150,13 @@ const Navbar = () => {
             </Tooltip>
 
             <Tooltip title="Cart">
-              <IconButton>
-                <Badge badgeContent={3} sx={badgeStyle}>
-                  <ShoppingBagOutlined />
-                </Badge>
-              </IconButton>
+              <Link to="/cart">
+                <IconButton>
+                  <Badge badgeContent={totalQuantity} showZero sx={badgeStyle}>
+                    <ShoppingBagOutlined />
+                  </Badge>
+                </IconButton>
+              </Link>
             </Tooltip>
           </Stack>
         </div>

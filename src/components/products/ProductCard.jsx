@@ -2,6 +2,10 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../../redux/slices/cartSlice";
+
 import {
   Heart,
   ShoppingCart,
@@ -10,6 +14,8 @@ import {
 } from "lucide-react";
 
 const ProductCard = ({ product }) => {
+
+  const dispatch = useDispatch();
 
   return (
 
@@ -153,7 +159,10 @@ const ProductCard = ({ product }) => {
       {/* BUTTON */}
       <div className="p-4 pt-0">
 
-        <button className="w-full mt-4 bg-gray-900 hover:bg-red-500 text-white py-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition duration-300">
+        <button
+          onClick={() => dispatch(addToCart(product))}
+          className="w-full mt-4 bg-gray-900 hover:bg-red-500 text-white py-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition duration-300"
+        >
 
           <ShoppingCart size={16} />
 
