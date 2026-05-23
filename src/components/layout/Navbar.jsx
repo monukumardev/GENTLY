@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MegaMenu from "./MegaMenu";
 import menuData from "../../data/menuData";
+import products from "../../data/products";
 
 import { Badge, IconButton, Button, Tooltip, Stack } from "@mui/material";
 
@@ -18,8 +19,14 @@ import {
 
 const Navbar = () => {
   const { cartItems } = useSelector((state) => state.cart);
+  const { wishlistItems } = useSelector((state) => state.wishlist);
   const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredProducts = products.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
 
   const badgeStyle = {
     "& .MuiBadge-badge": {
@@ -110,13 +117,59 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-2">
-          <div className="hidden xl:flex items-center bg-gray-50 px-3 py-1.5 rounded-lg w-80 border focus-within:border-red-500">
-            <SearchIcon sx={{ fontSize: 18, color: "#9ca3af" }} />
-            <input
-              type="text"
-              placeholder="Search sneakers, hoodies..."
-              className="bg-transparent outline-none ml-2 text-sm w-full"
-            />
+          <div className="relative hidden xl:block">
+            {/* SEARCH BOX */}
+            <div className="flex items-center bg-gray-50 px-3 py-1.5 rounded-lg w-80 border focus-within:border-red-500">
+              <SearchIcon sx={{ fontSize: 18, color: "#9ca3af" }} />
+
+              <input
+                type="text"
+                placeholder="Search sneakers, hoodies..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="bg-transparent outline-none ml-2 text-sm w-full"
+              />
+            </div>
+
+            {/* SEARCH RESULTS */}
+            {searchTerm && (
+              <div className="absolute top-[60px] left-0 w-full bg-white border border-gray-100 rounded-2xl shadow-2xl overflow-hidden z-50">
+                {filteredProducts.length > 0 ? (
+                  filteredProducts.slice(0, 5).map((item) => (
+                    <Link
+                      key={item.id}
+                      to={`/product/${item.slug}`}
+                      onClick={() => setSearchTerm("")}
+                      className="flex items-center gap-4 p-4 hover:bg-gray-50 transition border-b last:border-b-0"
+                    >
+                      {/* IMAGE */}
+                      <div className="w-16 h-16 bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="max-h-full object-contain p-2"
+                        />
+                      </div>
+
+                      {/* INFO */}
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-gray-900 line-clamp-1">
+                          {item.name}
+                        </h3>
+
+                        <p className="text-sm text-gray-400 mt-1">
+                          ₹{item.price}
+                        </p>
+                      </div>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="p-6 text-center text-gray-400">
+                    No Products Found
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           <Stack direction="row" spacing={0.5}>
@@ -142,11 +195,17 @@ const Navbar = () => {
             </Tooltip>
 
             <Tooltip title="Wishlist">
-              <IconButton>
-                <Badge badgeContent={0} showZero sx={badgeStyle}>
-                  <FavoriteBorder />
-                </Badge>
-              </IconButton>
+              <Link to="/wishlist">
+                <IconButton>
+                  <Badge
+                    badgeContent={wishlistItems.length}
+                    showZero
+                    sx={badgeStyle}
+                  >
+                    <FavoriteBorder />
+                  </Badge>
+                </IconButton>
+              </Link>
             </Tooltip>
 
             <Tooltip title="Cart">
